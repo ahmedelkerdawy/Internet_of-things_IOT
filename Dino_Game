@@ -1,0 +1,10 @@
+This Folder is a collection of Internet of Things (IoT) projects built primarily with the ESP32 platform.
+It includes hands-on experiments, prototypes, and demos that explore embedded systems, real-time applications, and interactive devices.
+
+Projects in this folder :
+
+🕹️ Fun applications like mini-games (e.g., Chrome Dino Game on TFT & OLED).
+
+📡 IoT connectivity experiments with sensors and actuators.
+
+⚡ Hardware-software integration using PlatformIO and the Arduino framework.
