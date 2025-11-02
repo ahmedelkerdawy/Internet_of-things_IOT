@@ -42,7 +42,11 @@ const char* mqtt_server = "YOUR_MQTT_BROKER_IP";
 const int mqtt_port = 1883;
 ```
 ---
-
+📡 MQTT Topics
+Topic	Direction	Description	Example Payload
+esp32/temperature	Publish	Temperature in °C	28.5
+esp32/hall	Publish	Hall sensor raw value	63
+esp32/led	Subscribe	Control onboard LED	ON / OFF
 ## 📂 Folder Structure
 ESP32_IoT_Sensor_Node_MQTT_WiFi_Manager/
 ├── src/ # Source code (main.cpp)
@@ -51,7 +55,28 @@ ESP32_IoT_Sensor_Node_MQTT_WiFi_Manager/
 ├── test/ # Test files
 ├── platformio.ini # PlatformIO configuration
 └── README.md # This file
+🧾 How to Use
 
+Flash the code to your ESP32 using PlatformIO.
+
+On first boot, ESP32 will create a WiFi Access Point:
+
+SSID: ESP32_Config_AP
+
+Password: 12345678
+
+Connect your phone/laptop to that AP.
+
+Configure your WiFi network via the captive portal.
+
+Once connected, ESP32 will automatically connect to WiFi and start sending data to your MQTT broker.
+
+Use any MQTT client (like MQTT Explorer or HiveMQ Web Client) to monitor and control the ESP32.
+
+🔁 Reset WiFi Credentials
+
+Hold the button connected to GPIO 0 for 3 seconds to clear saved WiFi settings.
+The ESP32 will reboot and create the configuration access point again.
 ## 🚀 Getting Started
 1. Open the project in **PlatformIO (VSCode)**  
 2. Configure WiFi and MQTT credentials in the code  
@@ -60,3 +85,19 @@ ESP32_IoT_Sensor_Node_MQTT_WiFi_Manager/
 ## 🧠 Author
 **Ahmed Elkerdawy**  
 [GitHub](https://github.com/ahmedelkerdawy)
+
+
+---
+
+### ✅ Next Steps
+
+Run these commands to add and push the README to GitHub:
+```bash
+cd /home/ahmed/Documents/Iot/05_platformio/ESP32_ IoT_ Sensor_ Node_ with_ MQTT_ and_ WiFi_ Manager
+nano README.md
+# (paste the text above, then save with CTRL+O, CTRL+X)
+
+git add README.md
+git commit -m "Add README for ESP32 IoT Sensor Node project"
+git push
+
